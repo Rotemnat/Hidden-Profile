@@ -1,0 +1,125 @@
+import random
+
+from otree.api import *
+
+
+doc = """
+This is an Information Sharing app
+Part 1/3 in the Hidden Profile experiment desing
+this part is made of 10 rounds of information sharing 
+and preferences pulling
+"""
+
+
+class C(BaseConstants):
+    PLAYERS_PER_GROUP = 3
+    NUM_ROUNDS = 2
+    NAME_IN_URL = 'share_information'
+    INSTRUCTIONS_TEMPLATE = 'share_information/instructions.html'
+    DATA_TEMPLATE = 'share_information/Infoset.html'
+    TABLE_TEMPLATE = __name__ + '/table.html'
+    OPTIMAL_OPTION = 'Project D1121'
+
+
+class Subsession(BaseSubsession):
+    random_round = random.randint(1, C.NUM_ROUNDS)
+
+
+class Group(BaseGroup):
+    pass
+
+
+
+class Player(BasePlayer):
+
+    option = models.StringField(
+        choices=['Project A1121', 'Project B1121','Project C1121', 'Project D1121', 'Project E1121'],
+        label="על איזה חלופה תרצו לשתף מידע?"
+    )
+
+    criteria = models.StringField(
+        choices=['I', 'II', 'III', 'IV', 'V','VI'],
+        label="על איזה קריטריון תרצו לשתף מידע?"
+    )
+
+    score = models.FloatField(
+        choices=[
+            [-1,'שלילי'],
+            [1,'חיובי']
+        ],
+        label="אנא שתפו אם הציון חיובי או שלילי"
+    )
+
+    preferred_option = models.StringField(
+        choices=['Project A1121', 'Project B1121', 'Project C1121', 'Project D1121', 'Project E1121'],
+        label="אם היה עליך להצביע עכשיו לאיזו חלופה היית מעניק/ה את קולך?"
+    )
+
+    level_of_consciousness = models.StringField(
+        choices=['0%','10%','20%','30%','40%','50%','60%','70%','80%','90%','100%'],
+        label="מה מידת הביטחון שלך בחלופה בה בחרת?",
+        widget=widgets.RadioSelectHorizontal
+    )
+    correct_in_round = models.BooleanField()
+    correct_in_random_round = models.BooleanField()
+
+# FUNCTIONS
+
+def set_outcomes(group):
+    for player in group.get_players():
+        if player.preferred_option == C.OPTIMAL_OPTION:
+            player.correct_in_round = True
+        else:
+            player.correct_in_round = False
+        if group.round_number == Subsession.random_round:
+            player.correct_in_random_round = player.correct_in_round
+        else:
+            player.correct_in_random_round = False
+# PAGES
+class Introduction(Page):
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.round_number == 1
+
+
+class Input(Page):
+    form_model = 'player'
+    form_fields = ['option','criteria','score']
+
+    @staticmethod
+    def vars_for_template(player: Player):
+        id_in_group = player.id_in_group
+        base_number = 1
+        pic_address = 'app1121/infoset{}.{}.png'.format(base_number, id_in_group)
+        return dict(
+            id_in_group=id_in_group,
+            pic_address=pic_address,
+        )
+
+class preference(Page):
+    form_model = 'player'
+    form_fields = ['preferred_option','level_of_consciousness']
+
+
+class ResultsWaitPage(WaitPage):
+    after_all_players_arrive = set_outcomes
+
+
+class TempResults(Page):
+    pass
+
+
+class Results(Page):
+    @staticmethod
+    def vars_for_template(player: Player):
+        group = player.group
+        id_in_group = player.id_in_group
+        base_number = 1
+        pic_address = 'app1121/infoset{}.{}.png'.format(base_number, id_in_group)
+        return dict(
+            players=group.get_players(),
+            id_in_group=id_in_group,
+            pic_address=pic_address,
+        )
+
+page_sequence = [Introduction, Input, preference, ResultsWaitPage, TempResults, Results]
