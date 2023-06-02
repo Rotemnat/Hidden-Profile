@@ -1,0 +1,19 @@
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+<div dir="rtl">
+    <p>את/ה בחרת באפשרות {{ player.vote }}</p>
+    <p>{{  player.is_correct  }}</p>
+    <p>{{  group.votes_for_optimal|to0  }} שחקנים בקבוצתך בחרו באפשרות הטובה ביותר  </p>
+    <p>{{  group.group_wins }}</p>
+    <p>עבור סבב זה תזכה ב {{  player.payoff  }}</p>
+    <p>עבור סבב זה תזכה ב {{  player.payoff  }}</p>
+
+
+    {{ next_button }}
+
+</div>
+
+{% endblock %}

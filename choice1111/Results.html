@@ -1,0 +1,30 @@
+{% block title %}
+<div dir="rtl">
+    תוצאות סבב ההדגמה
+</div>
+{% endblock %}
+
+{% block content %}
+<div dir="rtl">
+    <p></p>
+    <p>את/ה בחרת ב{{ player.vote }}</p>
+        {{ if player.is_correct }}
+        <p>
+            זוהי האפשרות הנכונה
+        </p>
+    {{ endif }}
+
+    <p>{{  group.votes_for_optimal|to0  }} שחקנים בקבוצתך בחרו באפשרות הטובה ביותר  </p>
+
+        {{ if group.group_wins }}
+        <p>
+            בחרתם ברוב קולות באפרות הטובה ביותר ולכן, אם סבב היה אחד מסבבי הניסוי כלל השחקנים החברים בקבוצה היו זוכים ב 150 נקודות בונוס
+        </p>
+    {{ endif }}
+
+
+    {{ next_button }}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{{ block content }}
+    {{ if subsession.round_number == C.NUM_ROUNDS }}
+    <p>
+        you chose {{ player.preferred_option }}
+        optimal potion was {{ C.OPTIMAL_OPTION  }}
+        Your final payoff is therefore {{ player.payoff }}.
+
+    </p>
+    {{ endif }}
+    {{ next_button }}
+{{ endblock }}
+
+

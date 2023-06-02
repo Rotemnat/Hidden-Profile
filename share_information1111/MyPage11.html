@@ -1,0 +1,29 @@
+{{ block title }}
+
+{{ endblock }}
+{{ block content }}
+<div dir="rtl">
+<P>אנא בחרו בחלופה המועדפת עליכם נכון לשלב זה</P>
+{{ formfield "preferred_option" }}
+<p>יש להזיז את הסמן כדי לציין את מידת הביטחון שלך בחלופה הנבחרת</p>
+
+<input type="range" name="level_of_consciousness" min="20" max="100" oninput="updateDescription(this)">
+<p id="description"></p>
+<!-- by leaving the description blank initially, we prompt the user to move the slider,
+reducing the anchoring/default effect. -->
+
+<script>
+    let description = document.getElementById('description');
+    function updateDescription(input) {
+        let level_of_consciousness = parseInt(input.value);
+        description.innerText = `אני בטוח/ה ב ${level_of_consciousness} אחוז שזו החלופה הנכונה.`
+    }
+</script>
+    <p>בחירה זו תתקיים בכל סבב בין שלב בחירת פריט המידע לשיתוף לבין שלב הצפייה בפריטי המידע שפורסמו.</p>
+    <p>בחירות אלו לא ישותפו עם שאר חברי/ות ההנהלה אלא ישמשו לקביעת "בונוס אישי".</p>
+    <p>מכיוון שמידע חדש מצטבר מסבב לסבב, ניתן לשנות דעה בין הסבבים.</p>
+
+{{ next_button }}
+</div>
+
+{{ endblock }}

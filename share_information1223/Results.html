@@ -1,0 +1,18 @@
+{{ block title }}
+<div dir="rtl">
+    זו העת לבחון את כלל המידע שברשותכם</div>
+{{ endblock }}
+
+{{ block content }}
+<div dir="rtl">
+        {{ include C.DATA_TEMPLATE }}
+    <h2>אלו פרטי המידע שחברי קבוצתככם שיתפו בסבב זה:</h2>
+    <p>{{group.info_item1}}</p>
+    <p>{{group.info_item2}}</p>
+    <p>{{group.info_item3}}</p>
+    <p>{{group.info_item4}}</p>
+    <p>אם תרצו לשמור פרטי מידע שחבריכם שיתפו בסבב זה תוכלו לסמן את המידע הנדרש על הדפים שקיבלתם בתחילת הניסוי.</p>
+    {{ next_button }}
+
+</div>
+{{ endblock }}
