@@ -7,7 +7,7 @@ Your app description
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'choice1121'
+    NAME_IN_URL = 'choice1221'
     PLAYERS_PER_GROUP = 4
     NUM_ROUNDS = 1
     PAYOFF = cu(150)
