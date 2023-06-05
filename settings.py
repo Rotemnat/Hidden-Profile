@@ -1,66 +1,32 @@
 from os import environ
 
-group_by_arrival_time = True
-
-def apps_sequence(group):
-    if group.id_in_subsession % 2 == 0:
-        return ['share_information1111','choice1111',
+SESSION_CONFIGS = [
+    dict(
+        name='Hidden_Profile1',
+        display_name='The Board Decision Game: Room 1',
+        app_sequence=['share_information1111', 'choice1111',
+                      'share_information1221', 'choice1221',
+                      'share_information1222', 'choice1222',
+                      'share_information1223', 'choice1223',
+                      'share_information1121', 'choice1121',
+                      'share_information1122', 'choice1122',
+                      'share_information1123', 'choice1123',
+                      'payment_info'],
+        num_demo_participants=4
+    ),
+    dict(
+        name='Hidden_Profile2',
+        display_name='The Board Decision Game: Room 2',
+        app_sequence=['share_information1111','choice1111',
                 'share_information1121', 'choice1121',
                 'share_information1122','choice1122',
                 'share_information1123','choice1123',
                 'share_information1221','choice1221',
                 'share_information1222','choice1222',
                 'share_information1223','choice1223',
-                'payment_info']
-    else:
-        return ['share_information1111', 'choice1111',
-                'share_information1221', 'choice1221',
-                'share_information1222', 'choice1222',
-                'share_information1223', 'choice1223',
-                'share_information1121', 'choice1121',
-                'share_information1122', 'choice1122',
-                'share_information1123', 'choice1123',
-                'payment_info']
-
-
-SESSION_CONFIGS = [
-    {
-        'name': 'room1',
-        'display_name': 'Room 1',
-        'num_demo_participants': 4,
-        'app_sequence': ['share_information1111','choice1111',
-                         'share_information1121', 'choice1121',
-                         'share_information1122','choice1122',
-                         'share_information1123','choice1123',
-                         'share_information1221','choice1221',
-                         'share_information1222','choice1222',
-                         'share_information1223','choice1223',
-                         'payment_info'],
-
-        'use_browser_bots': False
-    },
-    {
-        'name': 'room2',
-        'display_name': 'Room 2',
-        'num_demo_participants': 4,
-        'app_sequence': ['share_information1111', 'choice1111',
-                         'share_information1221', 'choice1221',
-                         'share_information1222', 'choice1222',
-                         'share_information1223', 'choice1223',
-                         'share_information1121', 'choice1121',
-                         'share_information1122', 'choice1122',
-                         'share_information1123', 'choice1123',
-                         'payment_info'],
-        'use_browser_bots': False
-    },
-'''    {
-        'name': 'room3',
-        'display_name': 'Room 3: Instructions',
-        'num_demo_participants': 4,
-        'app_sequence': ['share_information1111', 'choice1111'],
-        'use_browser_bots': False
-    }
-'''
+                'payment_info'],
+        num_demo_participants=4
+    ),
 ]
 
 # 'share_information1111', 'choice1111' are the introduction apps
