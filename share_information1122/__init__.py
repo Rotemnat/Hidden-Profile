@@ -8,7 +8,7 @@ Pay for a random round for guessing the best option
 class C(BaseConstants):
     NAME_IN_URL = 'share_information1122'
     PLAYERS_PER_GROUP = 4
-    NUM_ROUNDS = 10
+    NUM_ROUNDS = 8
     ENDOWMENT = cu(50)
     OPTIMAL_OPTION = 'פרויקט C'
     DATA_TEMPLATE = __name__ + '/Infoset.html'
@@ -184,9 +184,9 @@ class MyPage(Page):
             participant.selected_round = random_round
             player_in_selected_round = player.in_round(random_round)
             if player_in_selected_round.correct_in_round:
-                player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
+                player.payoff = C.ENDOWMENT + (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
             else:
-                player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100 * -1)
+                player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
 
 
 class ResultsWaitPage(WaitPage):
@@ -213,4 +213,4 @@ class TempResults(Page):
         return player.round_number == C.NUM_ROUNDS
 
 
-page_sequence = [Input, MyPage, ResultsWaitPage, Results, TempResults]
+page_sequence = [Input, MyPage, ResultsWaitPage, Results]
