@@ -8,7 +8,7 @@ Pay for a random round for guessing the best option
 class C(BaseConstants):
     NAME_IN_URL = 'share_information1111'
     PLAYERS_PER_GROUP = 4
-    NUM_ROUNDS = 2
+    NUM_ROUNDS = 1
     ENDOWMENT = cu(50)
     OPTIMAL_OPTION = 'פרויקט A'
     DATA_TEMPLATE = __name__ + '/Infoset.html'
@@ -130,14 +130,14 @@ class Player(BasePlayer):
 
 # FUNCTIONS
 
-
+'''
 def set_outcomes(group):
     for player in group.get_players():
         if player.preferred_option == C.OPTIMAL_OPTION:
             player.correct_in_round = True
         else:
             player.correct_in_round = False
-
+'''
 
 # PAGES
 class Introduction1(Page):
@@ -198,7 +198,7 @@ class MyPage11(Page):
     form_model = 'player'
     form_fields = ['preferred_option', 'level_of_consciousness']
 
-    @staticmethod
+'''    @staticmethod
     def before_next_page(player: Player, timeout_happened):
         import random
 
@@ -215,9 +215,10 @@ class MyPage11(Page):
             else:
                 player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
 
-
+'''
 class ResultsWaitPage(WaitPage):
-    after_all_players_arrive = set_outcomes
+    pass
+    #after_all_players_arrive = set_outcomes
 
 
 class Results(Page):
@@ -234,10 +235,11 @@ class Results(Page):
         )
 
 
+'''
 class TempResults(Page):
     @staticmethod
     def is_displayed(player: Player):
         return player.round_number == C.NUM_ROUNDS
-
+'''
 
 page_sequence = [Introduction1,Introduction2,Introduction3,Introduction4, Introduction5, Introduction6, Introduction7, Introduction8, Input9, Introduction10, MyPage11, Introduction11,  ResultsWaitPage, Results]
