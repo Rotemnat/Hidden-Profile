@@ -8,7 +8,7 @@ Pay for a random round for guessing the best option
 class C(BaseConstants):
     NAME_IN_URL = 'share_information1223'
     PLAYERS_PER_GROUP = 4
-    NUM_ROUNDS = 10
+    NUM_ROUNDS = 8
     ENDOWMENT = cu(50)
     OPTIMAL_OPTION = 'פרויקט E'
     DATA_TEMPLATE = __name__ + '/Infoset.html'
@@ -212,4 +212,4 @@ class TempResults(Page):
         return player.round_number == C.NUM_ROUNDS
 
 
-page_sequence = [Input, MyPage, ResultsWaitPage, Results, TempResults]
+page_sequence = [Input, MyPage, ResultsWaitPage, Results]
