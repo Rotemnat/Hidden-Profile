@@ -8,7 +8,7 @@ Pay for a random round for guessing the best option
 class C(BaseConstants):
     NAME_IN_URL = 'share_information1122'
     PLAYERS_PER_GROUP = 4
-    NUM_ROUNDS = 2
+    NUM_ROUNDS = 10
     ENDOWMENT = cu(50)
     OPTIMAL_OPTION = 'פרויקט C'
     DATA_TEMPLATE = __name__ + '/Infoset.html'
