@@ -213,4 +213,4 @@ class TempResults(Page):
         return player.round_number == C.NUM_ROUNDS
 
 
-page_sequence = [Input, MyPage, ResultsWaitPage, Results, TempResults]
+page_sequence = [Input, MyPage, ResultsWaitPage, Results]
