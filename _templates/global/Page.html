@@ -1,7 +1,9 @@
-{{ extends "otree/Page.html" }}
-{{ load otree }}
+{% extends "otree/Page.html" %}
+{% load otree %}
 
-{{ block global_styles  }}
-{{ endblock }}
-{{ block global_scripts  }}
-{{ endblock }}
+{% block global_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+{% endblock %}
+
+{% block content %}
+<div dir="rtl">
