@@ -1,15 +1,12 @@
 {% block title %}
-    Page title
+<div dir="rtl">המשחקון הסתיים!</div>
 {% endblock %}
 
 {% block content %}
 <div dir="rtl">
-    <p>את/ה בחרת באפשרות {{ player.vote }}</p>
-    <p>{{  player.is_correct  }}</p>
-    <p>{{  group.votes_for_optimal|to0  }} שחקנים בקבוצתך בחרו באפשרות הטובה ביותר  </p>
-    <p>{{  group.group_wins }}</p>
-    <p>עבור סבב זה תזכה ב {{  player.payoff  }}</p>
-    <p>עבור סבב זה תזכה ב {{  player.payoff  }}</p>
+
+    <h3>שימו לב, משחק זה הסתיים!</h3>
+    <h3>הנתונים שאספתם עד כה אינם תקפים למשחק הבא</h3>
 
 
     {{ next_button }}

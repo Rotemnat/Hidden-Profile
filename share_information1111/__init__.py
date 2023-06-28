@@ -112,7 +112,7 @@ class Player(BasePlayer):
     # vars for players opinien and level of confidance
     preferred_option = models.StringField(
         choices=['פרויקט A', 'פרויקט B', 'פרויקט C', 'פרויקט D', 'פרויקט E'],
-        label="אם היה עליך להצביע עכשיו לאיזו חלופה היית מעניק/ה את קולך?"
+        label="אם היה עליך להצביע עכשיו לאיזו חלופה היית מעניק.ה את קולך?"
     )
 
     level_of_consciousness = models.FloatField(
