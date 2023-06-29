@@ -31,7 +31,7 @@ SESSION_CONFIGS = [
         name='Hidden_Profile_test1',
         display_name='The Board Decision Game: Test Room',
         app_sequence=['choice1222','payment_info'],
-        num_demo_participants=4
+        num_demo_participants=1
     ),
 ]
 # 'share_information1111', 'choice1111' are the introduction apps
