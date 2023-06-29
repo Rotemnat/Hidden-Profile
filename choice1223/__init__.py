@@ -66,18 +66,22 @@ def set_payoffs(group: Group):
     popular_other_vote = max(group.votes_for_option1,group.votes_for_option2,group.votes_for_option3,group.votes_for_option5)
     if group.votes_for_optimal > 2:
         group.group_wins = True
-        for p in players:
-            p.payoff = C.PAYOFF
+        for Player in players:
+            Player.payoff = C.PAYOFF
     elif group.votes_for_optimal == 2:
         if group.votes_for_optimal > popular_other_vote:
             group.group_wins = True
-            for p in players:
-                p.payoff = C.PAYOFF
+            for Player in players:
+                Player.payoff = C.PAYOFF
         else:
             group.group_wins = False
+            for Player in players:
+                Player.payoff = cu(0)
+
     else:
         group.group_wins = False
-        Player.payoff = cu(0)
+        for Player in players:
+            Player.payoff = cu(0)
 
 # PAGES
 class MyPage(Page):
