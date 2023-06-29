@@ -34,7 +34,6 @@ SESSION_CONFIGS = [
         num_demo_participants=4
     ),
 ]
-
 # 'share_information1111', 'choice1111' are the introduction apps
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs

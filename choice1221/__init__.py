@@ -34,7 +34,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     vote = models.StringField(
         choices=['פרויקט A', 'פרויקט B', 'פרויקט C', 'פרויקט D', 'פרויקט E'],
-        label="עליך להצביע עכשיו לאיזו חלופה תעניק/י את קולך?"
+        label="עליך להצביע עכשיו לאיזו חלופה תעניק.י את קולך?"
     )
     is_correct = models.BooleanField()
     potential_payoff = models.CurrencyField(initial=0)
