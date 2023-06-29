@@ -7,7 +7,7 @@ Pay for a random round for guessing the best option
 
 class C(BaseConstants):
     NAME_IN_URL = 'share_information1111'
-    PLAYERS_PER_GROUP = 4
+    PLAYERS_PER_GROUP = 1
     NUM_ROUNDS = 1
     ENDOWMENT = cu(50)
     OPTIMAL_OPTION = 'פרויקט A'
