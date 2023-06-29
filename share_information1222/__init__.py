@@ -182,13 +182,15 @@ class MyPage(Page):
 
         # if it's the last round
         if player.round_number == C.NUM_ROUNDS:
-            random_round = random.randint(1, C.NUM_ROUNDS-1)
+            random_round = random.randint(1, C.NUM_ROUNDS - 1)
             participant.selected_round = random_round
             player_in_selected_round = player.in_round(random_round)
             if player_in_selected_round.correct_in_round:
-                player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
+                player_in_selected_round.payoff = C.ENDOWMENT + (
+                            C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
             else:
-                player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100 * -1)
+                player_in_selected_round.payoff = C.ENDOWMENT - (
+                            C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
 
 
 class ResultsWaitPage(WaitPage):

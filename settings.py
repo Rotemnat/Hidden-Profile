@@ -28,9 +28,9 @@ SESSION_CONFIGS = [
         num_demo_participants=4
     ),
     dict(
-        name='Hidden_Profile_test',
+        name='Hidden_Profile_test1',
         display_name='The Board Decision Game: Test Room',
-        app_sequence=['choice1121','payment_info'],
+        app_sequence=['share_information1221','payment_info'],
         num_demo_participants=4
     ),
 ]

@@ -184,10 +184,9 @@ class MyPage(Page):
             participant.selected_round = random_round
             player_in_selected_round = player.in_round(random_round)
             if player_in_selected_round.correct_in_round:
-                player.payoff = C.ENDOWMENT + (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
+                player_in_selected_round.payoff = C.ENDOWMENT + (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
             else:
-                player.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
-
+                player_in_selected_round.payoff = C.ENDOWMENT - (C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
 
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = set_outcomes
