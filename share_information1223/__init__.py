@@ -35,7 +35,7 @@ class Group(BaseGroup):
             "פרויקט C שלילי בקריטריון V",
             "פרויקט D חיובי בקריטריון V",
             "פרויקט A חיובי בקריטריון VI",
-            "פרויקט C שלילי בקריטריון VI"
+            "פרויקט C שלילי בקריטריון VI",
             "פרויקט E שלילי בקריטריון VI",
         ],
         label="איזה פריט מידע תבחרו לשתף?",
@@ -198,7 +198,7 @@ class Results(Page):
         group = player.group
         id_in_group = player.id_in_group
         base_number = 1
-        pic_address = 'app1123/infoset{}.{}.png'.format(base_number, id_in_group)
+        pic_address = 'app1223/infoset{}.{}.png'.format(base_number, id_in_group)
         return dict(
             players=group.get_players(),
             id_in_group=id_in_group,

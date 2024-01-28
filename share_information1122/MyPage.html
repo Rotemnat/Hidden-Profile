@@ -6,7 +6,7 @@
 {{ formfield "preferred_option" }}
 <p>יש להזיז את הסמן כדי לציין את מידת הביטחון שלך בחלופה הנבחרת</p>
 
-<input type="range" name="level_of_consciousness" min="20" max="100" oninput="updateDescription(this)">
+<input type="range" name="level_of_consciousness" min="20" max="100" value="20" oninput="updateDescription(this)">
 <p id="description"></p>
 <!-- by leaving the description blank initially, we prompt the user to move the slider,
 reducing the anchoring/default effect. -->
