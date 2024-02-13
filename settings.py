@@ -6,11 +6,9 @@ SESSION_CONFIGS = [
         display_name='The Board Decision Game: Room 1',
         app_sequence=['share_information1111', 'choice1111',
                       'share_information1221', 'choice1221',
-                      'share_information1222', 'choice1222',
                       'share_information1223', 'choice1223',
                       'share_information1121', 'choice1121',
                       'share_information1122', 'choice1122',
-                      'share_information1123', 'choice1123',
                       'payment_info'],
         num_demo_participants=4
     ),
@@ -20,10 +18,8 @@ SESSION_CONFIGS = [
         app_sequence=['share_information1111','choice1111',
                 'share_information1121', 'choice1121',
                 'share_information1122','choice1122',
-                'share_information1123','choice1123',
                 'share_information1221','choice1221',
                 'share_information1222','choice1222',
-                'share_information1223','choice1223',
                 'payment_info'],
         num_demo_participants=4
     ),
