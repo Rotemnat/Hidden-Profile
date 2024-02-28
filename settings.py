@@ -54,11 +54,16 @@ USE_POINTS = True
 
 ROOMS = [
     dict(
-        name='econ101',
-        display_name='Econ 101 class',
-        participant_label_file='_rooms/econ101.txt',
+        name='Room1',
+        display_name='Room1',
+        participant_label_file='_rooms/room1.txt',
     ),
-    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
+    dict(
+        name='Room2',
+        display_name='Room2',
+        participant_label_file='_rooms/room2.txt',
+    ),
+
 ]
 
 ADMIN_USERNAME = 'admin'
