@@ -161,7 +161,7 @@ class Input(Page):
     def vars_for_template(player: Player):
         id_in_group = player.id_in_group
         base_number = 1
-        pic_address = 'app1123/infoset{}.{}.png'.format(base_number, id_in_group)
+        pic_address = 'app1223/infoset{}.{}.png'.format(base_number, id_in_group)
         return dict(
             id_in_group=id_in_group,
             pic_address=pic_address,
