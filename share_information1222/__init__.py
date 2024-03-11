@@ -117,7 +117,7 @@ class Player(BasePlayer):
         label="אם היה עליך להצביע עכשיו לאיזו חלופה היית מעניק.ה את קולך?"
     )
 
-    level_of_consciousness = models.FloatField(
+    level_of_confidence = models.FloatField(
         min=20,
         max=100,
         label="מה מידת הביטחון שלך בחלופה?"
@@ -187,10 +187,10 @@ class MyPage(Page):
             player_in_selected_round = player.in_round(random_round)
             if player_in_selected_round.correct_in_round:
                 player_in_selected_round.payoff = C.ENDOWMENT + (
-                            C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
+                        C.ENDOWMENT * player_in_selected_round.level_of_confidence / 100)
             else:
                 player_in_selected_round.payoff = C.ENDOWMENT - (
-                            C.ENDOWMENT * player_in_selected_round.level_of_consciousness / 100)
+                        C.ENDOWMENT * player_in_selected_round.level_of_confidence / 100)
 
 
 class ResultsWaitPage(WaitPage):

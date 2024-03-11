@@ -115,7 +115,7 @@ class Player(BasePlayer):
         label="אם היה עליך להצביע עכשיו לאיזו חלופה היית מעניק.ה את קולך?"
     )
 
-    level_of_consciousness = models.FloatField(
+    level_of_confidence = models.FloatField(
         initial= None,
         min=20,
         max=100,
