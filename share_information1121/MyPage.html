@@ -6,7 +6,7 @@
 {{ formfield "preferred_option" }}
 <p>יש להזיז את הסמן כדי לציין את מידת הביטחון שלך בחלופה הנבחרת</p>
 
-<input type="range" name="level_of_consciousness" min="20" max="100" value="20" oninput="updateDescription(this)">
+<input type="range" name="level_of_confidence" min="20" max="100" value="20" oninput="updateDescription(this)">
 <p id="description"></p>
 <!-- by leaving the description blank initially, we prompt the user to move the slider,
 reducing the anchoring/default effect. -->
@@ -14,8 +14,8 @@ reducing the anchoring/default effect. -->
 <script>
     let description = document.getElementById('description');
     function updateDescription(input) {
-        let level_of_consciousness = parseInt(input.value);
-        description.innerText = `אני בטוח/ה ב ${level_of_consciousness} אחוז שזו החלופה הנכונה.`
+        let level_of_confidence = parseInt(input.value);
+        description.innerText = `אני בטוח/ה ב ${level_of_confidence} אחוז שזו החלופה הנכונה.`
     }
 </script>
 
