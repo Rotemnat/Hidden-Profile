@@ -15,7 +15,7 @@ class C(BaseConstants):
     SUBOPTIML_OPTION1 = 'פרויקט C'
     SUBOPTIML_OPTION2 = 'פרויקט D'
     SUBOPTIML_OPTION3 = 'פרויקט E'
-    PSSIMAL_OPTION = 'פרויקט A'
+    PSSIMAL_OPTION = 'פרויקט B'
 
 
 class Subsession(BaseSubsession):
