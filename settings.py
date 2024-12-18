@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='Hidden_Profile1',
-        display_name='The Board Decision Game: Room 1',
+        display_name='The Board Decision Game: Room 1 UB',
         app_sequence=['share_information1111', 'choice1111',
                       'share_information1221', 'choice1221',
                       'share_information1222', 'choice1222',
@@ -14,7 +14,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='Hidden_Profile2',
-        display_name='The Board Decision Game: Room 2',
+        display_name='The Board Decision Game: Room 2 BU',
         app_sequence=['share_information1111','choice1111',
                 'share_information1121', 'choice1121',
                 'share_information1122','choice1122',
